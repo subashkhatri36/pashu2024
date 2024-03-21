@@ -76,9 +76,6 @@ class OtherExpenses extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: save.tr,
                       onPressed: () async {
-                        if (hcontroller.isInterstitialAdReady) {
-                          hcontroller.interstitialAd?.show();
-                        }
                         if (updateed) {
                           await controller.updateOtherModel(
                               inout, context, model);

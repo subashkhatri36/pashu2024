@@ -11,7 +11,6 @@ import 'package:pasuhisab/app/modules/dannaconsumption/views/dannaconsumption_vi
 import 'package:pasuhisab/app/modules/home/controllers/home_controller.dart';
 import 'package:pasuhisab/app/modules/home/widget/simple_info_row_data.dart';
 import 'package:pasuhisab/app/modules/splash/controllers/splash_controller.dart';
-import 'package:pasuhisab/app/modules/widgets/ads_widget.dart';
 import 'package:pasuhisab/app/modules/widgets/border_container.dart';
 import 'package:pasuhisab/app/modules/widgets/button/CustomButton.dart';
 import 'package:pasuhisab/app/modules/widgets/category_items.dart';
@@ -195,8 +194,6 @@ class DanaView extends GetView<DanaController> {
               SizedBox(
                 height: borderRadius / 3,
               ),
-              if (chickController.isAdLoaded2.value)
-                AdsWidget(controller: chickController.ad2),
               Obx(() => controller.isloading.isTrue
                   ? Center(
                       child: CircularProgressIndicator(),
@@ -452,9 +449,6 @@ class DanaConsumptionWidget extends StatelessWidget {
                     borderRadius: borderRadius,
                     label: save.tr,
                     onPressed: () async {
-                      if (hcontroller.isInterstitialAdReady) {
-                        hcontroller.interstitialAd?.show();
-                      }
                       if (retu) {
                         await controller.updateReturn(
                             hcontroller.challid.value, index, context);

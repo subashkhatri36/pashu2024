@@ -185,9 +185,6 @@ class ChickensellView extends GetView<ChickensellController> {
                                       borderRadius: borderRadius,
                                       label: save.tr,
                                       onPressed: () {
-                                        if (hcontroller.isInterstitialAdReady) {
-                                          hcontroller.interstitialAd?.show();
-                                        }
                                         controller.saveContinue(context);
                                       },
                                     ),

@@ -53,9 +53,6 @@ class BottomIncomeWidget extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.to(ChickensellView(), binding: ChickensellBinding());
             },
@@ -63,9 +60,6 @@ class BottomIncomeWidget extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(SellMol(
                 model: MolModel(
@@ -80,9 +74,6 @@ class BottomIncomeWidget extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(
                 EggSell(
@@ -95,9 +86,6 @@ class BottomIncomeWidget extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(OtherIncome(
                 inout: true,

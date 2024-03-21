@@ -63,9 +63,6 @@ class ChickDead extends StatelessWidget {
                     borderRadius: borderRadius,
                     label: save.tr,
                     onPressed: () async {
-                      if (hcontrol.isInterstitialAdReady) {
-                        hcontrol.interstitialAd?.show();
-                      }
                       double cost = 0;
                       if (hcontrol.totalChalla.value != 0)
                         cost = ((hcontrol.totalExpenditure.value -

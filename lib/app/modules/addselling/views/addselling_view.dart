@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:pasuhisab/app/constants/Strings.dart';
 import 'package:pasuhisab/app/constants/constant.dart';
@@ -157,9 +156,6 @@ class AddsellingView extends GetView<AddsellingController> {
                           borderRadius: borderRadius,
                           label: controller.updateded ? update.tr : save.tr,
                           onPressed: () async {
-                            if (hcontroller.isInterstitialAdReady) {
-                              hcontroller.interstitialAd?.show();
-                            }
                             if (controller.updateded) {
                               await controller.updateSelling(
                                   hcontroller.challid.value, selling);

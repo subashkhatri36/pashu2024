@@ -16,7 +16,6 @@ import 'package:pasuhisab/app/modules/home/widget/menu/menu_field.dart';
 import 'package:pasuhisab/app/modules/home/widget/pdf_page.dart';
 import 'package:pasuhisab/app/modules/home/widget/profit_loss_widget.dart';
 import 'package:pasuhisab/app/modules/splash/controllers/splash_controller.dart';
-import 'package:pasuhisab/app/modules/widgets/ads_widget.dart';
 import 'package:pasuhisab/app/modules/widgets/border_container.dart';
 import 'package:pasuhisab/app/modules/widgets/button/CustomButton.dart';
 import 'package:pasuhisab/app/modules/widgets/category_items.dart';
@@ -121,10 +120,6 @@ class _HomeViewState extends State<HomeView> {
                                                 text: printing.tr,
                                                 iconData: Icons.print,
                                                 onPressed: () {
-                                                  if (controller
-                                                      .isInterstitialAdReady)
-                                                    controller.interstitialAd
-                                                        ?.show();
                                                   if (Get.find<
                                                           SplashController>()
                                                       .nepaliLanguage
@@ -172,8 +167,6 @@ class _HomeViewState extends State<HomeView> {
                                         SizedBox(
                                           height: SizeConfig.heightMultiplier,
                                         ),
-                                        if (controller.isAdLoaded1.value)
-                                          AdsWidget(controller: controller.ad1),
                                         TotalExpenditureSummaryWidget(),
                                         SizedBox(
                                           height: SizeConfig.heightMultiplier,
@@ -211,8 +204,6 @@ class _HomeViewState extends State<HomeView> {
                           )),
                         ),
             ),
-            if (controller.isAdLoaded.value)
-              AdsWidget(controller: controller.ad),
           ],
         ),
       )),

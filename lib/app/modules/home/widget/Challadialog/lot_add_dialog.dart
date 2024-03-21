@@ -62,9 +62,6 @@ class AddLotsWidget extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: save.tr,
                       onPressed: () async {
-                        if (controllr.isInterstitialAdReady) {
-                          controllr.interstitialAd?.show();
-                        }
                         await controller.addChalla();
                         if (controller.challRecordList?.length == 1)
                           await controllr

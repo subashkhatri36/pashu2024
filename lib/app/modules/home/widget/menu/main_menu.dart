@@ -48,9 +48,6 @@ class _MainMenuHeaderState extends State<MainMenuHeader> {
               text: chick.tr,
               iconData: Icons.add,
               onPressed: () {
-                if (controller.isInterstitialAdReady) {
-                  controller.interstitialAd?.show();
-                }
                 Get.bottomSheet(AddLotsWidget(), isDismissible: false);
               },
             ),
@@ -58,9 +55,6 @@ class _MainMenuHeaderState extends State<MainMenuHeader> {
               text: note.tr,
               iconData: Icons.note,
               onPressed: () {
-                if (controller.isInterstitialAdReady) {
-                  controller.interstitialAd?.show();
-                }
                 Get.to(NoteView(), binding: NoteBinding());
               },
             ),
@@ -68,9 +62,6 @@ class _MainMenuHeaderState extends State<MainMenuHeader> {
               text: setting.tr,
               iconData: Icons.settings,
               onPressed: () {
-                if (controller.isInterstitialAdReady) {
-                  controller.interstitialAd?.show();
-                }
                 Get.to(
                   () => SettingView(),
                 );
@@ -80,9 +71,6 @@ class _MainMenuHeaderState extends State<MainMenuHeader> {
               text: balance.tr,
               iconData: Icons.price_change,
               onPressed: () {
-                if (controller.isInterstitialAdReady) {
-                  controller.interstitialAd?.show();
-                }
                 Get.bottomSheet(BalanceWidget());
                 //Get.to(() => SettingView(), binding: SettingBinding());
               },

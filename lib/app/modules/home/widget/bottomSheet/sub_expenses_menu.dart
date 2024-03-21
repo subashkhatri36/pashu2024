@@ -53,9 +53,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.to(DanaView(), binding: DanaBinding());
             },
@@ -63,9 +60,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(BhushAdd());
             },
@@ -73,9 +67,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(AddMedicine());
             },
@@ -83,9 +74,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(EleRentWater());
             },
@@ -93,9 +81,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               Get.bottomSheet(AddLabor());
             },
@@ -103,9 +88,6 @@ class ExpensesMenu extends StatelessWidget {
           ),
           ClickMenu(
             onPressed: () {
-              if (controller.isInterstitialAdReady) {
-                controller.interstitialAd?.show();
-              }
               navigator?.pop();
               //inocme true expenses false
               Get.bottomSheet(OtherExpenses(

@@ -119,9 +119,6 @@ class _BhushAddState extends State<BhushAdd> {
                             borderRadius: borderRadius,
                             label: controller.updatebhus ? update.tr : save.tr,
                             onPressed: () async {
-                              if (chickid.isInterstitialAdReady) {
-                                chickid.interstitialAd?.show();
-                              }
                               if (controller.updatebhus) {
                                 await controller.updateBhush(
                                     chickid.challid.value, context);

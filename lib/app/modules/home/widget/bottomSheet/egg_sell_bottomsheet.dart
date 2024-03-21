@@ -110,9 +110,6 @@ class EggSell extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: updated ? update.tr : save.tr,
                       onPressed: () async {
-                        if (hcontroller.isInterstitialAdReady) {
-                          hcontroller.interstitialAd?.show();
-                        }
                         if (updated) {
                           await controller.updateEgg(
                               hcontroller.challid.value, model, context);

@@ -96,9 +96,6 @@ class EleRentWater extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: controller.updateElect ? update.tr : save.tr,
                       onPressed: () async {
-                        if (hcontroller.isInterstitialAdReady) {
-                          hcontroller.interstitialAd?.show();
-                        }
                         if (controller.updateElect) {
                           await controller.updateEleModel(
                               hcontroller.challid.value, context);

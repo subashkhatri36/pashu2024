@@ -66,9 +66,6 @@ class BalanceWidget extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: controller.balanceB == null ? save.tr : update.tr,
                       onPressed: () {
-                        if (controller.isInterstitialAdReady) {
-                          controller.interstitialAd?.show();
-                        }
                         controller.updatebalance();
                         Navigator.pop(context);
                       },

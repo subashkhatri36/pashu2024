@@ -9,7 +9,6 @@ import 'package:pasuhisab/app/modules/addselling/bindings/addselling_binding.dar
 import 'package:pasuhisab/app/modules/addselling/views/addselling_view.dart';
 import 'package:pasuhisab/app/modules/home/controllers/home_controller.dart';
 import 'package:pasuhisab/app/modules/home/widget/simple_info_row_data.dart';
-import 'package:pasuhisab/app/modules/widgets/ads_widget.dart';
 import 'package:pasuhisab/app/modules/widgets/border_container.dart';
 import 'package:pasuhisab/app/modules/widgets/table/two_column_table_value.dart';
 import 'package:pasuhisab/app/modules/widgets/title_widget.dart';
@@ -75,8 +74,6 @@ class ChickensellreportView extends GetView<ChickensellreportController> {
                     )),
               ],
             )),
-            if (chickcontroller.isAdLoaded3.value)
-              AdsWidget(controller: chickcontroller.ad3),
             Divider(),
             Obx(() => controller.isloading.isTrue
                 ? Center(

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pasuhisab/app/constants/Strings.dart';
 import 'package:pasuhisab/app/constants/db_name.dart';
 import 'package:pasuhisab/app/core/repositories/all_repositories.dart';
 import 'package:pasuhisab/app/core/repositories/chall_record_respositiories.dart';
 import 'package:pasuhisab/app/core/repositories/challa_dead_repositories.dart';
-import 'package:pasuhisab/app/core/service/ad_helper.dart';
 import 'package:pasuhisab/app/data/model/balance_model.dart';
 import 'package:pasuhisab/app/data/model/category.dart';
 import 'package:pasuhisab/app/data/model/chall_dead.dart';
@@ -379,13 +377,6 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // loadingChicks();
-    initGoogleMobileAds();
-    loadAds();
-    loadAds1();
-    loadAds2();
-    loadAds3();
-    loadInterstitialAd();
   }
 
   deleteChalla(BuildContext context, int index) async {
@@ -471,122 +462,10 @@ class HomeController extends GetxController {
     await totalIncomeMethod();
   }
 
-  InterstitialAd? interstitialAd;
   bool isInterstitialAdReady = false;
-
-  void loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: AdHelper.interstitialAdUnitId,
-      request: AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) {
-          this.interstitialAd = ad;
-
-          ad.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (ad) {
-              loadInterstitialAd();
-            },
-          );
-
-          isInterstitialAdReady = true;
-        },
-        onAdFailedToLoad: (err) {
-          print('Failed to load an interstitial ad: ${err.message}');
-          isInterstitialAdReady = false;
-        },
-      ),
-    );
-  }
-
-  BannerAd? ad;
-  BannerAd? ad1;
-  BannerAd? ad2;
-  BannerAd? ad3;
-  RxBool isAdLoaded = false.obs;
-  RxBool isAdLoaded1 = false.obs;
-  RxBool isAdLoaded2 = false.obs;
-  RxBool isAdLoaded3 = false.obs;
-
-  Future<InitializationStatus> initGoogleMobileAds() {
-    return MobileAds.instance.initialize();
-  }
-
-  loadAds() {
-    ad = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (_) {
-          isAdLoaded.value = true; //reactive
-        },
-        onAdFailedToLoad: (ad, error) {
-          // Releases an ad resource when it fails to load
-          ad.dispose();
-        },
-      ),
-    );
-    ad?.load();
-  }
-
-  loadAds1() {
-    ad1 = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId1,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (_) {
-          isAdLoaded1.value = true; //reactive
-        },
-        onAdFailedToLoad: (ad1, error) {
-          // Releases an ad resource when it fails to load
-          ad1.dispose();
-        },
-      ),
-    );
-    ad1?.load();
-  }
-
-  loadAds2() {
-    ad2 = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId2,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (_) {
-          isAdLoaded2.value = true; //reactive
-        },
-        onAdFailedToLoad: (ad2, error) {
-          // Releases an ad resource when it fails to load
-          ad2.dispose();
-        },
-      ),
-    );
-    ad2?.load();
-  }
-
-  loadAds3() {
-    ad3 = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId3,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (_) {
-          isAdLoaded3.value = true; //reactive
-        },
-        onAdFailedToLoad: (ad3, error) {
-          // Releases an ad resource when it fails to load
-          ad3.dispose();
-        },
-      ),
-    );
-    ad3?.load();
-  }
 
   @override
   void onClose() {
-    ad?.dispose();
-    interstitialAd?.dispose();
     remarksController.dispose();
     amountcontroller.dispose();
   }

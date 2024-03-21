@@ -119,9 +119,6 @@ class DanaAdd extends StatelessWidget {
                 borderRadius: borderRadius,
                 label: controller.updateTable.value ? update.tr : save.tr,
                 onPressed: () async {
-                  if (chickController.isInterstitialAdReady) {
-                    chickController.interstitialAd?.show();
-                  }
                   if (controller.updateTable.value) {
                     await controller.updateDana(
                         challid: chickController.challid.value);

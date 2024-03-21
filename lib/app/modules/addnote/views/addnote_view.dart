@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:pasuhisab/app/constants/Strings.dart';
 import 'package:pasuhisab/app/constants/constant.dart';
@@ -57,15 +56,11 @@ class AddnoteView extends GetView<AddnoteController> {
                         : update.tr,
                     btnColor: Theme.of(context).primaryColor,
                     onPressed: () async {
-                      if (hcontroller.isInterstitialAdReady) {
-                        hcontroller.interstitialAd?.show();
-                      }
                       if (arg[1].toString().toLowerCase() == 'add')
                         await controller.saveNotes();
                       else
                         await controller.updateNote(arg[0].id);
 
-                     
                       await not.getAllNotes();
                     },
                   )

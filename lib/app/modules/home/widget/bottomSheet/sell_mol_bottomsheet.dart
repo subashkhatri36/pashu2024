@@ -109,9 +109,6 @@ class SellMol extends StatelessWidget {
                         borderRadius: borderRadius,
                         label: save.tr,
                         onPressed: () async {
-                          if (hcontroller.isInterstitialAdReady) {
-                            hcontroller.interstitialAd?.show();
-                          }
                           await controller.saveMol(hcontroller.challid.value);
                           await hcontroller.totalIncomeMethod();
                           Navigator.pop(context);

@@ -68,9 +68,6 @@ class AddLabor extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: controller.updatelabor ? update.tr : save.tr,
                       onPressed: () async {
-                        if (chickController.isInterstitialAdReady) {
-                          chickController.interstitialAd?.show();
-                        }
                         if (!controller.updatelabor) {
                           await controller.savedLabor(
                               chickController.challid.value, context);

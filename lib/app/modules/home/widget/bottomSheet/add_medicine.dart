@@ -71,9 +71,6 @@ class AddMedicine extends StatelessWidget {
                       borderRadius: borderRadius,
                       label: controller.updatemedicine ? update.tr : save.tr,
                       onPressed: () async {
-                        if (hcontroller.isInterstitialAdReady) {
-                          hcontroller.interstitialAd?.show();
-                        }
                         await controller.savedMedicine(
                             chickcontroller.challid.value, context);
                         await hcontroller.totalExpenses();
